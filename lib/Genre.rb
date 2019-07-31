@@ -1,11 +1,10 @@
-class Song
-  attr_accessor :name, :artist
+class Genre
+  attr_accessor :name
   
   @@all = []
-  def initialize(name,artistobj = self.artist)
+  def initialize(name)
     @name = name
     self.save
-    self.artist = artistobj
   end
   
   def save
@@ -21,6 +20,6 @@ class Song
   end
   
   def self.create(name)
-    song = self.new(name)
+    genre = self.new(name)
   end
 end
