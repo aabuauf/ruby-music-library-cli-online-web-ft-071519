@@ -2,7 +2,7 @@ class Song
   attr_accessor :name, :artist
   
   @@all = []
-  def initialize(name,artistobj = self.artist)
+  def initialize(name,artistobj = {})
     @name = name
     self.save
     self.artist = artistobj
