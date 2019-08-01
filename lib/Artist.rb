@@ -43,7 +43,7 @@ class Artist
        
       artist_el.songs.each do |song_el|
        
-       allGenre =  song_el.genre
+       allGenre << song_el.genre
       end
     end
     return allGenre
