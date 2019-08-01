@@ -1,4 +1,5 @@
 require 'pry'
+
 class Artist
   attr_accessor :name, :songs
   
@@ -26,11 +27,18 @@ class Artist
   end
   
   def add_song(nameSong)
+ 
    nameSong.artist = self if nameSong.artist == nil
     
    if @songs.include?(nameSong) 
    else
      @songs << nameSong 
    end
+ 
   end
+  
+  # def genres
+  #   binding.pry
+  #   @@all.select {self.genre} 
+  # end
 end
