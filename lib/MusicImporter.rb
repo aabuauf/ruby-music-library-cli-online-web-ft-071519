@@ -24,7 +24,7 @@ class MusicImporter
  
     filenames.each do|file|
       
-      song= Song.new_from_filename(file)
+      song= Song.create_from_filename(file)
     end
   end 
 end
