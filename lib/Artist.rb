@@ -37,8 +37,8 @@ class Artist
  
   end
   
-  # def genres
-  #   binding.pry
-  #   @@all.select {self.genre} 
-  # end
+   def genres
+    binding.pry
+    @@all.select {self.genre} 
+   end
 end
