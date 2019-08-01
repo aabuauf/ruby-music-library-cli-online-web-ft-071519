@@ -25,9 +25,10 @@ class Song
   def self.create(name)
     song = self.new(name)
   end
-  
   def artist
-    binding.pry
-    self.artist.add_song(self) 
+    
+ #   @artist.songs << self
+    @artist
   end
+    
 end
