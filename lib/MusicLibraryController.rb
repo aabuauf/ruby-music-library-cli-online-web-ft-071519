@@ -93,4 +93,8 @@ class MusicLibraryController
       puts "#{i+=1}. #{eachsong}"
     end
   end
+  
+  def list_songs_by_genre
+    
+  end
 end
