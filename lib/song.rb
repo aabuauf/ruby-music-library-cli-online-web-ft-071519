@@ -2,7 +2,7 @@ require 'pry'
 
 class Song
   attr_accessor :name, :artist, :genre
-  extend Findable
+  
   
   @@all = []
   def initialize(name,artistobj = @artist, genreobj = @genre )
