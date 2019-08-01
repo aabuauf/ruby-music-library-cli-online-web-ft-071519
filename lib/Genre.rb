@@ -1,3 +1,5 @@
+require 'pry'
+
 class Genre
   attr_accessor :name, :songs
   
@@ -22,5 +24,16 @@ class Genre
   
   def self.create(name)
     genre = self.new(name)
+  end
+  
+  def artists
+    artistsArray = []
+    @@all.each do |genre_el|
+      
+      genre_el.songs.each do |songs_el|
+        artistsArray << songs_el.artist
+      end
+    end
+    artistsArray.uniq
   end
 end

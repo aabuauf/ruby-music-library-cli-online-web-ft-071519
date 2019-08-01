@@ -49,5 +49,18 @@ class Song
     end
     @genre
   end
+  
+  def self.find_by_name(songName)
+    @@all.find {|e|e.name==songName}
+  end
+  
+  def self.find_or_create_by_name(songName)
+   
+    if self.find_by_name(songName) 
+      self.find_by_name(songName) 
+    else
+      self.create(songName)
+    end
+  end
     
 end
