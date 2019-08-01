@@ -38,7 +38,14 @@ class Artist
   end
   
    def genres
-    binding.pry
-    @@all.select {self.genre} 
+   allGenre =[]
+    @@all.each do |artist_el|
+       
+      artist_el.songs.each do |song_el|
+       
+       allGenre =  song_el.genre
+      end
+    end
+    allGenre
    end
 end
