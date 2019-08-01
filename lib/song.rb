@@ -8,7 +8,7 @@ class Song
     @name = name
     self.save
     
-    self.genre = genreobj
+    self.genre = genreobj if genreobj != nil
     
     self.artist = artistobj if artistobj != nil
     
@@ -42,7 +42,11 @@ class Song
 
   def genre=(genre)
     @genre =genre
-    @genre.songs << self
+    if @genre.songs.include?(self)
+      
+    else
+      @genre.songs << self
+    end
     @genre
   end
     
