@@ -63,13 +63,14 @@ class MusicLibraryController
   
   def list_genres
     allGenres =[]
-    Genres.all.each do |genres_el|
-      allGeneres<< genres_el.name
+    
+    Genre.all.each do |genres_el|
+      allGenres<< genres_el.name
     end
-    allGeneres = allGeneres.sort.uniq
+    allGenres = allGenres.sort.uniq
     
     i = 0
-    allGeneres.each do |eachGenre|
+    allGenres.each do |eachGenre|
       puts "#{i+=1}. #{eachGenre}"
     end
   end
