@@ -60,4 +60,17 @@ class MusicLibraryController
       puts "#{i+=1}. #{eachArtist}"
     end
   end
+  
+  def list_genres
+    allGenres =[]
+    Genres.all.each do |genres_el|
+      allGeneres<< genres_el.name
+    end
+    allGeneres = allGeneres.sort.uniq
+    
+    i = 0
+    allGeneres.each do |eachGenre|
+      puts "#{i+=1}. #{eachGenre}"
+    end
+  end
 end
