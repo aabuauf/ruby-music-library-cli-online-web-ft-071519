@@ -77,6 +77,20 @@ class MusicLibraryController
   
   def list_songs_by_artist
     puts "Please enter the name of an artist:"
-    nameInput = gets.strip
+     gets.strip
+    i =0
+    newArray = []
+    
+    Song.all.each do |eachSong|
+      
+      if gets.strip == eachSong.artist.name
+        newArray << eachSong.name + " - " + eachSong.genre.name
+       
+      end
+    end
+    newArray = newArray.sort.uniq
+    newArray.each do |eachsong|
+      puts "#{i+=1}. #{eachsong}"
+    end
   end
 end
