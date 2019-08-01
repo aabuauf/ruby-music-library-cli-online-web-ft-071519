@@ -49,7 +49,15 @@ class MusicLibraryController
   end
   
   def list_artists
-    binding.pry
-    Artist.all.name
+    allArtists =[]
+    Artist.all.each do |artist_el|
+      allArtists << artist_el.name
+    end
+    allArtists = allArtists.sort.uniq
+    
+    i = 0
+    allArtists.each do |eachArtist|
+      puts "#{i+=1}. #{eachArtist}"
+    end
   end
 end
