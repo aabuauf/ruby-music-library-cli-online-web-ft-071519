@@ -18,4 +18,13 @@ class MusicImporter
     end
     fileNameArray
   end
+  
+  def import
+    filenames = files
+ 
+    filenames.each do|file|
+      
+      song= Song.new_from_filename(file)
+    end
+  end 
 end
