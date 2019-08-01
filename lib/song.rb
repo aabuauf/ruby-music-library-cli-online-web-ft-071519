@@ -9,7 +9,8 @@ class Song
     self.save
     
     self.genre = genreobj
-    @artist = artistobj
+    
+    self.artist = artistobj if artistobj != nil
     
   end
   
@@ -30,8 +31,6 @@ class Song
   end
   def artist
     
-#   @artist.songs << self if @artist != nil 
-#   @artist.add_song(self) if @artist != nil 
     @artist
   end
   
