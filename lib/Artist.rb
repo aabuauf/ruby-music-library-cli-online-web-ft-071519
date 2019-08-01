@@ -46,6 +46,6 @@ class Artist
        allGenre =  song_el.genre
       end
     end
-    allGenre
+    return allGenre
    end
 end
