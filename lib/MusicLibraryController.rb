@@ -74,4 +74,9 @@ class MusicLibraryController
       puts "#{i+=1}. #{eachGenre}"
     end
   end
+  
+  def list_songs_by_artist
+    puts "Please enter the name of an artist:"
+    nameInput = gets.strip
+  end
 end
