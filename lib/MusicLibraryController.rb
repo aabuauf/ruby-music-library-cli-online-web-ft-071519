@@ -41,11 +41,13 @@ class MusicLibraryController
   
     end
     newArray = newArray.sort
-    
+    @musicImporter = []
     newArray.each do |eachSong|
       newfile = [eachSong[1],eachSong[0],eachSong[2]].join (" - ")
        puts "#{i+=1}. #{newfile.split(".")[0]}"
+       @musicImporter << "#{i}. #{newfile.split(".")[0]}"
     end
+    return @musicImporter
   end
   
   def list_artists
@@ -114,6 +116,18 @@ class MusicLibraryController
   end
   
   def play_song
-    
+    puts("Which song number would you like to play?")
+    gets.strip
+   
+    # binding.pry
+    list_songs
+    @musicImporter.each do |eachSong|
+   
+      if gets.strip == eachSong.split(" - ")[1]
+        
+        puts "Playing #{gets.strip} by #{eachSong.split(" - ")[0]}"
+
+      end  
+    end
   end
 end
