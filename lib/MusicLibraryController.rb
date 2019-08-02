@@ -112,4 +112,8 @@ class MusicLibraryController
       puts "#{i+=1}. #{eachsong.split(" - ")[1]} - #{eachsong.split(" - ")[0]}"
     end
   end
+  
+  def play_song
+    
+  end
 end
