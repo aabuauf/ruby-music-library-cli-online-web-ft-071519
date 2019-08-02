@@ -20,10 +20,24 @@ class MusicLibraryController
    
     userInput = gets.strip
     
-     if userInput.downcase == "list songs"
+    if userInput.downcase == "list songs"
        list_songs
     end
-    
+    if userInput.downcase == "list artists"
+       list_artists
+    end
+    if userInput.downcase == "list genres"
+       list_genres
+    end
+    if userInput.downcase == "list artist"
+       list_songs_by_artist
+    end   
+    if userInput.downcase == "list genre"
+       list_songs_by_genre
+    end  
+    if userInput.downcase == "play song"
+       play_song
+    end  
     until userInput.downcase == "exit" do 
         puts("Welcome to your music library!")
         puts("To list all of your songs, enter 'list songs'.")
