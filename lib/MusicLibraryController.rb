@@ -95,6 +95,21 @@ class MusicLibraryController
   end
   
   def list_songs_by_genre
+    puts "Please enter the name of a genre:"
+    gets.strip
+        i =0
+    newArray = []
     
+    Song.all.each do |eachSong|
+      
+      if gets.strip == eachSong.genre.name
+        newArray << eachSong.name + " - " + eachSong.artist.name
+       
+      end
+    end
+    newArray = newArray.sort.uniq
+    newArray.each do |eachsong|
+      puts "#{i+=1}. #{eachsong.split(" - ")[1]} - #{eachsong.split(" - ")[0]}"
+    end
   end
 end
