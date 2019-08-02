@@ -33,7 +33,7 @@ class MusicLibraryController
     end
   end
   
-  def list_songs
+  def list_songs(number = 0)
     i=0
     newArray = []
     @musicImporter.each do |eachsong|
@@ -44,8 +44,12 @@ class MusicLibraryController
     @musicImporter = []
     newArray.each do |eachSong|
       newfile = [eachSong[1],eachSong[0],eachSong[2]].join (" - ")
-       puts "#{i+=1}. #{newfile.split(".")[0]}"
+       if number == 0
+        puts "#{i+=1}. #{newfile.split(".")[0]}"
        @musicImporter << "#{i}. #{newfile.split(".")[0]}"
+     else
+       @musicImporter << "#{i+=1}. #{newfile.split(".")[0]}"
+     end
     end
     return @musicImporter
   end
@@ -119,13 +123,13 @@ class MusicLibraryController
     puts("Which song number would you like to play?")
     gets.strip
    
-    # binding.pry
-    list_songs
-    @musicImporter.each do |eachSong|
    
-      if gets.strip == eachSong.split(" - ")[1]
+    
+    list_songs(gets.strip).each do |eachSong|
+   
+      if gets.strip == eachSong.split(".")[0]
         
-        puts "Playing #{gets.strip} by #{eachSong.split(" - ")[0]}"
+        puts "Playing #{eachSong.split(" - ")[1]} by #{eachSong.split(" - ")[0].split(". ")[1]}"
 
       end  
     end
