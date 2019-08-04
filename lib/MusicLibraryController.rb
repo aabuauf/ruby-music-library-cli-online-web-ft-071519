@@ -20,6 +20,7 @@ class MusicLibraryController
    
     userInput = gets.strip
     
+<<<<<<< HEAD
     if userInput.downcase == "list songs"
        list_songs
     end
@@ -39,6 +40,11 @@ class MusicLibraryController
        play_song
     end  
     until userInput.downcase == "exit" do 
+=======
+    list_songs if get.strip == "list song"
+    
+    until gets.strip.downcase == "exit" do 
+>>>>>>> 0710308b9081ae9c01dfee25c253591839fda044
         puts("Welcome to your music library!")
         puts("To list all of your songs, enter 'list songs'.")
         puts("To list all of the artists in your library, enter 'list artists'.")
@@ -48,8 +54,13 @@ class MusicLibraryController
         puts("To play a song, enter 'play song'.")
         puts("To quit, type 'exit'.")
         puts("What would you like to do?")
+<<<<<<< HEAD
         
 userInput = gets.strip
+=======
+        gets.strip
+        
+>>>>>>> 0710308b9081ae9c01dfee25c253591839fda044
     end
     
 
